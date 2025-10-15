@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AR/VR 연구자 포트폴리오">
+    <title>이름 | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #000;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About */
+        .about p {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .skill-category p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-tech {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-links a {
+            color: #000;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .project-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* Contact */
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-list a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-list a:hover {
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            .project-links a {
+                display: inline-block;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>홍길동</h1>
+            <p class="subtitle">AR/VR Researcher</p>
+        </header>
+
+        <!-- About -->
+        <section class="about">
+            <h2>About</h2>
+            <p>
+                AR/VR 및 Computer Vision 분야에 관심이 많은 연구자입니다. 
+                Reality-Virtuality Convergence와 Meta-Object 개념에 흥미를 느끼고 있으며, 
+                실제로 사용자가 경험할 수 있는 시스템을 만드는 것을 좋아합니다.
+            </p>
+            <p>
+                Unity, Computer Vision, Deep Learning을 활용하여 
+                사람과 기술이 자연스럽게 상호작용하는 미래를 만들고 싶습니다.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill-category">
+                    <h3>3D Engines</h3>
+                    <p>Unity, Unreal Engine, Three.js</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <p>Python, C++, C#, JavaScript</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Computer Vision</h3>
+                    <p>OpenCV, MediaPipe, YOLO</p>
+                </div>
+                <div class="skill-category">
+                    <h3>AI / ML</h3>
+                    <p>PyTorch, TensorFlow, Scikit-learn</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects">
+            <h2>Projects</h2>
+            
+            <div class="project">
+                <h3>AR Hand Tracking System</h3>
+                <p class="project-description">
+                    Unity와 MediaPipe를 활용한 실시간 손 추적 시스템. 
+                    60fps 달성 및 정확도 95% 이상.
+                </p>
+                <p class="project-tech">Unity · MediaPipe · C#</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourname/project1" target="_blank">GitHub</a>
+                    <a href="https://youtube.com/..." target="_blank">Demo</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Scene Graph Visualizer</h3>
+                <p class="project-description">
+                    실시간으로 Scene Graph를 시각화하고 편집할 수 있는 웹 기반 도구. 
+                    계층 구조 관리 및 노드 간 관계 시각화.
+                </p>
+                <p class="project-tech">JavaScript · Three.js · D3.js</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourname/project2" target="_blank">GitHub</a>
+                    <a href="https://yourname.github.io/project2" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>물체 인식 AR 앱</h3>
+                <p class="project-description">
+                    YOLO를 활용한 실시간 물체 인식 및 AR 정보 오버레이 모바일 앱. 
+                    30fps 이상 실시간 처리.
+                </p>
+                <p class="project-tech">Unity · YOLO · AR Foundation</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourname/project3" target="_blank">GitHub</a>
+                    <a href="https://youtube.com/..." target="_blank">Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li>GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 홍길동</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll for anchor links (if you add them)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
