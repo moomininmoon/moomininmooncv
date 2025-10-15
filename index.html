@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="방문혁 포트폴리오">
+    <meta name="description" content="방문혁 AR/VR 연구자 포트폴리오">
     <title>방문혁 | Portfolio</title>
     <style>
         * {
@@ -13,216 +13,476 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.8;
-            color: #1a1a1a;
-            background: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #e2e8f0;
+            background: #0a0a0a;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 80px 30px;
+            padding: 60px 40px;
         }
 
         /* Header */
         header {
             margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #1a1a1a;
         }
 
         h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #000;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: 300;
+            font-size: 1.3rem;
+            color: #a0aec0;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         /* Sections */
         section {
-            margin-bottom: 80px;
+            margin-bottom: 70px;
         }
 
         h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #000;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #10b981, #34d399);
+            border-radius: 2px;
         }
 
         /* About */
         .about p {
-            color: #333;
-            margin-bottom: 1rem;
+            color: #cbd5e0;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about strong {
+            color: #e2e8f0;
+            font-weight: 600;
         }
 
         /* Experience */
         .experience-item {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #f0f0f0;
+            background: #1a1a1a;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+            transition: all 0.3s ease;
         }
 
-        .experience-item:last-child {
-            border-bottom: none;
+        .experience-item:hover {
+            background: #1f1f1f;
+            transform: translateX(4px);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .experience-item h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: #000;
+            color: #ffffff;
         }
 
         .experience-period {
-            color: #888;
+            color: #a0aec0;
             font-size: 0.9rem;
+            font-weight: 500;
+            background: #0f0f0f;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
         }
 
         .experience-role {
-            color: #666;
-            margin-bottom: 0.5rem;
-            font-style: italic;
+            color: #10b981;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .experience-description {
-            color: #555;
+            color: #cbd5e0;
+            line-height: 1.7;
+        }
+
+        .experience-description p {
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
         }
 
         .experience-description ul {
-            margin-left: 1.2rem;
-            margin-top: 0.5rem;
+            margin-left: 1.5rem;
+            margin-top: 0.8rem;
         }
 
         .experience-description li {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            color: #cbd5e0;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: -1rem;
+            color: #10b981;
         }
 
         /* Projects */
         .project {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #f0f0f0;
+            background: #1a1a1a;
+            padding: 2rem;
+            margin-bottom: 1.8rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .project:last-child {
-            border-bottom: none;
+        .project::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #10b981, #34d399);
+        }
+
+        .project:hover {
+            background: #1f1f1f;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .project h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            color: #000;
+            color: #ffffff;
         }
 
         .project-status {
-            color: #0066cc;
-            font-size: 0.9rem;
-            font-weight: 500;
+            color: #0a0a0a;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
         }
 
         .project-description {
-            color: #555;
-            margin-bottom: 0.8rem;
+            color: #cbd5e0;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .project-details {
+            background: #0f0f0f;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid #2d2d2d;
+        }
+
+        .project-details ul {
+            margin-left: 1.2rem;
+        }
+
+        .project-details li {
+            margin-bottom: 0.4rem;
+            color: #cbd5e0;
+            font-size: 0.95rem;
         }
 
         .project-tech {
-            color: #888;
+            color: #a0aec0;
             font-size: 0.9rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .project-links a {
-            color: #000;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #ffffff;
+            background: #2d2d2d;
             text-decoration: none;
-            margin-right: 1.5rem;
-            font-size: 0.95rem;
-            border-bottom: 1px solid #000;
-            padding-bottom: 2px;
-            transition: opacity 0.2s;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #3d3d3d;
         }
 
         .project-links a:hover {
-            opacity: 0.6;
+            background: #3d3d3d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .project-links a.pdf-link {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            border: none;
+            color: #0a0a0a;
+            font-weight: 600;
+        }
+
+        .project-links a.pdf-link:hover {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
         }
 
         /* Contact */
+        .contact-card {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #2d2d2d;
+        }
+
         .contact-list {
             list-style: none;
         }
 
         .contact-list li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #cbd5e0;
+        }
+
+        .contact-list li::before {
+            content: '→';
+            color: #10b981;
+            font-weight: bold;
         }
 
         .contact-list a {
-            color: #000;
+            color: #10b981;
             text-decoration: none;
-            border-bottom: 1px solid #000;
-            padding-bottom: 2px;
-            transition: opacity 0.2s;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
         .contact-list a:hover {
-            opacity: 0.6;
+            color: #34d399;
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
-            color: #999;
+            color: #4a5568;
             font-size: 0.9rem;
-            border-top: 1px solid #f0f0f0;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 60px;
+        }
+
+        /* PDF Modal */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pdf-container {
+            width: 90%;
+            height: 90%;
+            max-width: 1200px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .pdf-header {
+            background: #0f0f0f;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2d2d2d;
+        }
+
+        .pdf-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .pdf-close {
+            background: #2d2d2d;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .pdf-close:hover {
+            background: #10b981;
+            color: #0a0a0a;
+        }
+
+        .pdf-viewer {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: #0a0a0a;
         }
 
         /* Responsive */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .container {
-                padding: 60px 20px;
+                padding: 40px 20px;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
-            .subtitle {
-                font-size: 1rem;
+            h2 {
+                font-size: 1.5rem;
             }
 
-            .experience-header,
-            .project-header {
+            .experience-item,
+            .project {
+                padding: 1.5rem;
+            }
+
+            .project-links {
                 flex-direction: column;
-                align-items: flex-start;
             }
 
-            .experience-period,
-            .project-status {
-                margin-top: 0.3rem;
+            .project-links a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .pdf-container {
+                width: 95%;
+                height: 95%;
             }
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .experience-item,
+        .project {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .experience-item:nth-child(1) { animation-delay: 0.1s; }
+        .experience-item:nth-child(2) { animation-delay: 0.2s; }
+        .project:nth-child(1) { animation-delay: 0.1s; }
+        .project:nth-child(2) { animation-delay: 0.2s; }
+        .project:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
@@ -230,7 +490,11 @@
         <!-- Header -->
         <header>
             <h1>방문혁</h1>
-            <p class="subtitle">Student </p>
+            <p class="subtitle">Student · AR/VR Researcher</p>
+            <div class="header-meta">
+                <span>🎓 홍익대학교 소프트웨어융합학과</span>
+                <span>📅 2026년 졸업 예정</span>
+            </div>
         </header>
 
         <!-- About -->
@@ -242,8 +506,9 @@
                 실제 사용자가 경험할 수 있는 시스템을 개발하는 것에 열정을 가지고 있습니다.
             </p>
             <p>
-                <strong>홍익대학교 소프트웨어융합학과</strong><br>
-                2026년 2월 졸업 예정
+                Point Cloud 데이터 처리, ARKit를 활용한 페이셜 트래킹, 
+                시스템 프로그래밍부터 IoT까지 다양한 기술 스택을 경험하며 
+                실용적인 솔루션을 만드는 것을 즐깁니다.
             </p>
         </section>
 
@@ -256,11 +521,11 @@
                     <h3>한국전자통신연구원 (ETRI)</h3>
                     <span class="experience-period">2025.01 - 2025.02</span>
                 </div>
-                <p class="experience-role">인턴</p>
+                <p class="experience-role">동계 인턴</p>
                 <div class="experience-description">
                     <ul>
                         <li>볼류메트릭 에셋의 세그멘테이션 작업 산출물 개발</li>
-                        <li>3D 데이터 시각화 및 처리</li>
+                        <li>3D 데이터 시각화 및 처리 파이프라인 구축</li>
                         <li>Cloud Compare, Blender를 활용한 3D 모델링 작업</li>
                     </ul>
                 </div>
@@ -271,9 +536,9 @@
                     <h3>한국전자통신연구원 (ETRI)</h3>
                     <span class="experience-period">2024.07 - 2024.08</span>
                 </div>
-                <p class="experience-role">인턴</p>
+                <p class="experience-role">하계 인턴</p>
                 <div class="experience-description">
-                    <p>사용자 중심의 메타버스 콘텐츠 공간생성을 위한 스케치 기반 실내공간용 시맨틱 3D 모델링 기술 개발</p>
+                    <p><strong>사용자 중심의 메타버스 콘텐츠 공간생성을 위한 스케치 기반 실내공간용 시맨틱 3D 모델링 기술 개발</strong></p>
                     <ul>
                         <li>3D 스캔데이터(Point Cloud) 처리 도구 개발</li>
                         <li>실내 공간 모델링 파이프라인 구축</li>
@@ -296,7 +561,7 @@
                     애플 ARKit를 활용한 Vtuber 아바타 생성 및 실시간 페이셜 트래킹 시스템. 
                     프롬프트 기반 이미지 생성부터 아바타 생성, 얼굴 추적, 음성 변조까지 통합한 올인원 솔루션.
                 </p>
-                <div class="experience-description">
+                <div class="project-details">
                     <ul>
                         <li>AI 프롬프트를 통한 자동 아바타 이미지 생성</li>
                         <li>생성된 이미지 기반 3D 아바타 모델링</li>
@@ -306,6 +571,9 @@
                     </ul>
                 </div>
                 <p class="project-tech">Swift · ARKit · Python · AI Image Generation</p>
+                <div class="project-links">
+                    <a href="#" onclick="openPDF('1010-2.pdf', 'Vtuber 프로젝트'); return false;" class="pdf-link">📄 프로젝트 상세보기</a>
+                </div>
             </div>
 
             <div class="project">
@@ -324,32 +592,107 @@
                     원격 제어, 출입 기록 관리, 실시간 알림 기능을 포함한 통합 보안 시스템.
                 </p>
                 <p class="project-tech">Raspberry Pi · Python · Mobile App Development · IoT</p>
+                <div class="project-links">
+                    <a href="#" onclick="openPDF('a.pdf', '스마트 도어락 프로젝트'); return false;" class="pdf-link">📄 프로젝트 상세보기</a>
+                </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section class="contact">
             <h2>Contact</h2>
-            <ul class="contact-list">
-                <li>Email: <a href="mailto:qkdansgur2@naver.com">qkdansgur2@naver.com</a></li>
-            </ul>
+            <div class="contact-card">
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:qkdansgur2@naver.com">qkdansgur2@naver.com</a></li>
+                    <li>GitHub: <a href="https://github.com/moomininmoon" target="_blank">github.com/moomininmoon</a></li>
+                </ul>
+            </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>© 2025 방문혁</p>
+            <p>© 2025 방문혁 · AR/VR Researcher Portfolio</p>
         </footer>
     </div>
 
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-container">
+            <div class="pdf-header">
+                <span class="pdf-title" id="pdfTitle">프로젝트 상세</span>
+                <button class="pdf-close" onclick="closePDF()">✕ 닫기</button>
+            </div>
+            <iframe id="pdfViewer" class="pdf-viewer"></iframe>
+        </div>
+    </div>
+
     <script>
-        // Smooth scroll for anchor links
+        // PDF 열기
+        function openPDF(filename, title) {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+            const titleElement = document.getElementById('pdfTitle');
+            
+            titleElement.textContent = title;
+            viewer.src = filename;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // PDF 닫기
+        function closePDF() {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+            
+            modal.classList.remove('active');
+            viewer.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESC 키로 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePDF();
+            }
+        });
+
+        // 모달 배경 클릭 시 닫기
+        document.getElementById('pdfModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePDF();
+            }
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
