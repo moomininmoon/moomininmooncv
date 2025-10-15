@@ -299,6 +299,18 @@
             box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
         }
 
+        .project-links a.video-link {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            border: none;
+            color: #0a0a0a;
+            font-weight: 600;
+        }
+
+        .project-links a.video-link:hover {
+            background: linear-gradient(135deg, #0284c7 0%, #0891b2 100%);
+            box-shadow: 0 4px 16px rgba(14, 165, 233, 0.4);
+        }
+
         /* Contact */
         .contact-card {
             background: #1a1a1a;
@@ -418,6 +430,75 @@
             background: #0a0a0a;
         }
 
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 1200px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-header {
+            background: #0f0f0f;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #2d2d2d;
+        }
+
+        .video-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .video-close {
+            background: #2d2d2d;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .video-close:hover {
+            background: #0ea5e9;
+            color: #0a0a0a;
+        }
+
+        .video-player {
+            width: 100%;
+            max-height: 70vh;
+            background: #0a0a0a;
+            outline: none;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -446,7 +527,8 @@
                 justify-content: center;
             }
 
-            .pdf-container {
+            .pdf-container,
+            .video-container {
                 width: 95%;
                 height: 95%;
             }
@@ -583,6 +665,9 @@
                     커널 레벨에서 리소스 사용량을 추적하고 임계값 초과 시 알림을 발송하는 기능 구현.
                 </p>
                 <p class="project-tech">C · Linux Kernel · System Programming · OpenZFS</p>
+                <div class="project-links">
+                    <a href="#" onclick="openVideo('k.mov', 'OpenZFS 시스템 실연'); return false;" class="video-link">🎬 실연 영상 보기</a>
+                </div>
             </div>
 
             <div class="project">
@@ -626,6 +711,19 @@
         </div>
     </div>
 
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-container">
+            <div class="video-header">
+                <span class="video-title" id="videoTitle">실연 영상</span>
+                <button class="video-close" onclick="closeVideo()">✕ 닫기</button>
+            </div>
+            <video id="videoPlayer" class="video-player" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
     <script>
         // PDF 열기
         function openPDF(filename, title) {
@@ -649,10 +747,35 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Video 열기
+        function openVideo(filename, title) {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('videoPlayer');
+            const titleElement = document.getElementById('videoTitle');
+            
+            titleElement.textContent = title;
+            player.src = filename;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            player.play();
+        }
+
+        // Video 닫기
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('videoPlayer');
+            
+            modal.classList.remove('active');
+            player.pause();
+            player.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
         // ESC 키로 닫기
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closePDF();
+                closeVideo();
             }
         });
 
@@ -660,6 +783,12 @@
         document.getElementById('pdfModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closePDF();
+            }
+        });
+
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
             }
         });
 
