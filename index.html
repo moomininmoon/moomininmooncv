@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AR/VR 연구자 포트폴리오">
-    <title>이름 | Portfolio</title>
+    <meta name="description" content="방문혁 포트폴리오">
+    <title>방문혁 | Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -63,32 +63,58 @@
             margin-bottom: 1rem;
         }
 
-        /* Skills */
-        .skills-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .skill-category {
-            margin-bottom: 1rem;
+        .experience-item:last-child {
+            border-bottom: none;
         }
 
-        .skill-category h3 {
-            font-size: 1rem;
-            font-weight: 600;
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
             margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
             color: #000;
         }
 
-        .skill-category p {
+        .experience-period {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .experience-role {
             color: #666;
-            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .experience-description {
+            color: #555;
+        }
+
+        .experience-description ul {
+            margin-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.3rem;
         }
 
         /* Projects */
         .project {
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid #f0f0f0;
         }
@@ -97,11 +123,24 @@
             border-bottom: none;
         }
 
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
         .project h3 {
             font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
             color: #000;
+        }
+
+        .project-status {
+            color: #0066cc;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .project-description {
@@ -173,13 +212,15 @@
                 font-size: 1rem;
             }
 
-            .skills-list {
-                grid-template-columns: 1fr;
+            .experience-header,
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .project-links a {
-                display: inline-block;
-                margin-bottom: 0.5rem;
+            .experience-period,
+            .project-status {
+                margin-top: 0.3rem;
             }
         }
     </style>
@@ -188,43 +229,56 @@
     <div class="container">
         <!-- Header -->
         <header>
-            <h1>홍길동</h1>
-            <p class="subtitle">AR/VR Researcher</p>
+            <h1>방문혁</h1>
+            <p class="subtitle">Student </p>
         </header>
 
         <!-- About -->
         <section class="about">
             <h2>About</h2>
             <p>
-                AR/VR 및 Computer Vision 분야에 관심이 많은 연구자입니다. 
-                Reality-Virtuality Convergence와 Meta-Object 개념에 흥미를 느끼고 있으며, 
-                실제로 사용자가 경험할 수 있는 시스템을 만드는 것을 좋아합니다.
+                AR/VR 분야에 관심이 많은 학생 연구자입니다. 
+                3D 스캔 데이터 처리와 메타버스 콘텐츠 제작 경험을 바탕으로 
+                실제 사용자가 경험할 수 있는 시스템을 개발하는 것에 열정을 가지고 있습니다.
             </p>
             <p>
-                Unity, Computer Vision, Deep Learning을 활용하여 
-                사람과 기술이 자연스럽게 상호작용하는 미래를 만들고 싶습니다.
+                <strong>홍익대학교 소프트웨어융합학과</strong><br>
+                2026년 2월 졸업 예정
             </p>
         </section>
 
-        <!-- Skills -->
-        <section class="skills">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill-category">
-                    <h3>3D Engines</h3>
-                    <p>Unity, Unreal Engine, Three.js</p>
+        <!-- Experience -->
+        <section class="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>한국전자통신연구원 (ETRI)</h3>
+                    <span class="experience-period">2025.01 - 2025.02</span>
                 </div>
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <p>Python, C++, C#, JavaScript</p>
+                <p class="experience-role">인턴</p>
+                <div class="experience-description">
+                    <ul>
+                        <li>볼류메트릭 에셋의 세그멘테이션 작업 산출물 개발</li>
+                        <li>3D 데이터 시각화 및 처리</li>
+                        <li>Cloud Compare, Blender를 활용한 3D 모델링 작업</li>
+                    </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Computer Vision</h3>
-                    <p>OpenCV, MediaPipe, YOLO</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>한국전자통신연구원 (ETRI)</h3>
+                    <span class="experience-period">2024.07 - 2024.08</span>
                 </div>
-                <div class="skill-category">
-                    <h3>AI / ML</h3>
-                    <p>PyTorch, TensorFlow, Scikit-learn</p>
+                <p class="experience-role">인턴</p>
+                <div class="experience-description">
+                    <p>사용자 중심의 메타버스 콘텐츠 공간생성을 위한 스케치 기반 실내공간용 시맨틱 3D 모델링 기술 개발</p>
+                    <ul>
+                        <li>3D 스캔데이터(Point Cloud) 처리 도구 개발</li>
+                        <li>실내 공간 모델링 파이프라인 구축</li>
+                        <li>Cloud Compare, Blender를 활용한 데이터 처리 자동화</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -234,42 +288,42 @@
             <h2>Projects</h2>
             
             <div class="project">
-                <h3>AR Hand Tracking System</h3>
-                <p class="project-description">
-                    Unity와 MediaPipe를 활용한 실시간 손 추적 시스템. 
-                    60fps 달성 및 정확도 95% 이상.
-                </p>
-                <p class="project-tech">Unity · MediaPipe · C#</p>
-                <div class="project-links">
-                    <a href="https://github.com/yourname/project1" target="_blank">GitHub</a>
-                    <a href="https://youtube.com/..." target="_blank">Demo</a>
+                <div class="project-header">
+                    <h3>Vtuber 데뷔를 위한 종합 프로그램</h3>
+                    <span class="project-status">진행중</span>
                 </div>
+                <p class="project-description">
+                    애플 ARKit를 활용한 Vtuber 아바타 생성 및 실시간 페이셜 트래킹 시스템. 
+                    프롬프트 기반 이미지 생성부터 아바타 생성, 얼굴 추적, 음성 변조까지 통합한 올인원 솔루션.
+                </p>
+                <div class="experience-description">
+                    <ul>
+                        <li>AI 프롬프트를 통한 자동 아바타 이미지 생성</li>
+                        <li>생성된 이미지 기반 3D 아바타 모델링</li>
+                        <li>ARKit 52 Blendshape를 활용한 실시간 얼굴 추적</li>
+                        <li>실시간 목소리 변조 기능 통합</li>
+                        <li>전체 워크플로우 자동화</li>
+                    </ul>
+                </div>
+                <p class="project-tech">Swift · ARKit · Python · AI Image Generation</p>
             </div>
 
             <div class="project">
-                <h3>Scene Graph Visualizer</h3>
+                <h3>OpenZFS CPU 모니터링 알림 시스템</h3>
                 <p class="project-description">
-                    실시간으로 Scene Graph를 시각화하고 편집할 수 있는 웹 기반 도구. 
-                    계층 구조 관리 및 노드 간 관계 시각화.
+                    OpenZFS 파일시스템에 CPU 사용량 모니터링 및 알림 서비스를 추가하는 시스템 프로그래밍 프로젝트. 
+                    커널 레벨에서 리소스 사용량을 추적하고 임계값 초과 시 알림을 발송하는 기능 구현.
                 </p>
-                <p class="project-tech">JavaScript · Three.js · D3.js</p>
-                <div class="project-links">
-                    <a href="https://github.com/yourname/project2" target="_blank">GitHub</a>
-                    <a href="https://yourname.github.io/project2" target="_blank">Live Demo</a>
-                </div>
+                <p class="project-tech">C · Linux Kernel · System Programming · OpenZFS</p>
             </div>
 
             <div class="project">
-                <h3>물체 인식 AR 앱</h3>
+                <h3>라즈베리파이 스마트 도어락 시스템</h3>
                 <p class="project-description">
-                    YOLO를 활용한 실시간 물체 인식 및 AR 정보 오버레이 모바일 앱. 
-                    30fps 이상 실시간 처리.
+                    라즈베리파이를 이용한 IoT 기반 스마트 도어락 및 모바일 어플리케이션 개발. 
+                    원격 제어, 출입 기록 관리, 실시간 알림 기능을 포함한 통합 보안 시스템.
                 </p>
-                <p class="project-tech">Unity · YOLO · AR Foundation</p>
-                <div class="project-links">
-                    <a href="https://github.com/yourname/project3" target="_blank">GitHub</a>
-                    <a href="https://youtube.com/..." target="_blank">Demo</a>
-                </div>
+                <p class="project-tech">Raspberry Pi · Python · Mobile App Development · IoT</p>
             </div>
         </section>
 
@@ -277,20 +331,18 @@
         <section class="contact">
             <h2>Contact</h2>
             <ul class="contact-list">
-                <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                <li>GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank">linkedin.com/in/yourname</a></li>
+                <li>Email: <a href="mailto:qkdansgur2@naver.com">qkdansgur2@naver.com</a></li>
             </ul>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>© 2025 홍길동</p>
+            <p>© 2025 방문혁</p>
         </footer>
     </div>
 
     <script>
-        // Smooth scroll for anchor links (if you add them)
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
