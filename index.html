@@ -26,7 +26,6 @@
             padding: 60px 40px;
         }
 
-        /* Header */
         header {
             margin-bottom: 80px;
             padding-bottom: 40px;
@@ -62,7 +61,6 @@
             gap: 0.4rem;
         }
 
-        /* Sections */
         section {
             margin-bottom: 70px;
         }
@@ -87,7 +85,6 @@
             border-radius: 2px;
         }
 
-        /* About */
         .about p {
             color: #cbd5e0;
             margin-bottom: 1.2rem;
@@ -100,7 +97,6 @@
             font-weight: 600;
         }
 
-        /* Experience */
         .experience-item {
             background: #1a1a1a;
             padding: 2rem;
@@ -176,7 +172,6 @@
             color: #10b981;
         }
 
-        /* Projects */
         .project {
             background: #1a1a1a;
             padding: 2rem;
@@ -203,29 +198,11 @@
             box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
         }
 
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.8rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
         .project h3 {
             font-size: 1.4rem;
             font-weight: 600;
             color: #ffffff;
-        }
-
-        .project-status {
-            color: #0a0a0a;
-            font-size: 0.85rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-            padding: 0.3rem 0.9rem;
-            border-radius: 20px;
-            letter-spacing: 0.3px;
+            margin-bottom: 0.8rem;
         }
 
         .project-description {
@@ -279,6 +256,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             border: 1px solid #3d3d3d;
+            cursor: pointer;
         }
 
         .project-links a:hover {
@@ -311,7 +289,6 @@
             box-shadow: 0 4px 16px rgba(14, 165, 233, 0.4);
         }
 
-        /* Contact */
         .contact-card {
             background: #1a1a1a;
             padding: 2.5rem;
@@ -350,7 +327,6 @@
             text-decoration: underline;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
@@ -360,7 +336,6 @@
             margin-top: 60px;
         }
 
-        /* PDF Modal */
         .pdf-modal {
             display: none;
             position: fixed;
@@ -430,7 +405,6 @@
             background: #0a0a0a;
         }
 
-        /* Video Modal */
         .video-modal {
             display: none;
             position: fixed;
@@ -499,7 +473,6 @@
             outline: none;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 40px 20px;
@@ -534,7 +507,6 @@
             }
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -569,7 +541,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header>
             <h1>방문혁</h1>
             <p class="subtitle">Student </p>
@@ -579,7 +550,6 @@
             </div>
         </header>
 
-        <!-- About -->
         <section class="about">
             <h2>About</h2>
             <p>
@@ -605,7 +575,6 @@
             </div>
         </section>
 
-        <!-- Experience -->
         <section class="experience">
             <h2>Experience</h2>
             
@@ -641,7 +610,6 @@
             </div>
         </section>
 
-        <!-- Projects -->
         <section class="projects">
             <h2>Projects</h2>
             
@@ -691,23 +659,20 @@
             </div>
         </section>
 
-        <!-- Contact -->
         <section class="contact">
             <h2>Contact</h2>
             <div class="contact-card">
                 <ul class="contact-list">
-                    <li>Email: <a href="/cdn-cgi/l/email-protection#f0819b94919e83978582c2b09e91869582de939f9d"><span class="__cf_email__" data-cfemail="6b1a000f0a05180c1e19592b050a1d0e1945080406">[email&#160;protected]</span></a></li>
+                    <li>Email: <a href="mailto:qkdansgur2@naver.com">qkdansgur2@naver.com</a></li>
                 </ul>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer>
             <p>© 2025 방문혁 · AR/VR Researcher Portfolio</p>
         </footer>
     </div>
 
-    <!-- PDF Modal -->
     <div id="pdfModal" class="pdf-modal">
         <div class="pdf-container">
             <div class="pdf-header">
@@ -718,7 +683,6 @@
         </div>
     </div>
 
-    <!-- Video Modal -->
     <div id="videoModal" class="video-modal">
         <div class="video-container">
             <div class="video-header">
@@ -731,8 +695,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // PDF 열기
+    <script>
         function openPDF(filename, title) {
             const modal = document.getElementById('pdfModal');
             const viewer = document.getElementById('pdfViewer');
@@ -744,7 +707,6 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // PDF 닫기
         function closePDF() {
             const modal = document.getElementById('pdfModal');
             const viewer = document.getElementById('pdfViewer');
@@ -754,7 +716,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Video 열기
         function openVideo(filename, title) {
             const modal = document.getElementById('videoModal');
             const player = document.getElementById('videoPlayer');
@@ -767,7 +728,6 @@
             player.play();
         }
 
-        // Video 닫기
         function closeVideo() {
             const modal = document.getElementById('videoModal');
             const player = document.getElementById('videoPlayer');
@@ -778,7 +738,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // ESC 키로 닫기
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closePDF();
@@ -786,7 +745,6 @@
             }
         });
 
-        // 모달 배경 클릭 시 닫기
         document.getElementById('pdfModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closePDF();
@@ -799,7 +757,6 @@
             }
         });
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -812,7 +769,6 @@
             });
         });
 
-        // Scroll animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -822,4 +778,14 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
-                    entry.target.s
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
