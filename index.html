@@ -575,7 +575,7 @@
             <p class="subtitle">Student </p>
             <div class="header-meta">
                 <span>🎓 홍익대학교 소프트웨어융합학과</span>
-                <span>📅 2026년 2월 졸업 예정</span>
+                <span>📅 2026년 졸업 예정</span>
             </div>
         </header>
 
@@ -662,7 +662,7 @@
                 </div>
                 <p class="project-tech">ARKit · Python · AI Image Generation</p>
                 <div class="project-links">
-                    <a href="#" onclick="openPDF('1010-2.pdf', 'Vtuber 프로젝트'); return false;" class="pdf-link">📄 프로젝트 상세보기</a>
+                    <a href="1010-2.pdf" class="pdf-link" target="_blank">📄 프로젝트 상세보기</a>
                 </div>
             </div>
 
@@ -674,7 +674,7 @@
                 </p>
                 <p class="project-tech">C · Linux Kernel · System Programming · OpenZFS</p>
                 <div class="project-links">
-                    <a href="#" onclick="openVideo('k.mov', 'OpenZFS 시스템 실연'); return false;" class="video-link">🎬 실연 영상 보기</a>
+                    <a href="k.mov" class="video-link" target="_blank">🎬 실연 영상 보기</a>
                 </div>
             </div>
 
@@ -686,7 +686,7 @@
                 </p>
                 <p class="project-tech">Raspberry Pi · Python · Mobile App Development · IoT</p>
                 <div class="project-links">
-                    <a href="#" onclick="openPDF('a.pdf', '스마트 도어락 프로젝트'); return false;" class="pdf-link">📄 프로젝트 상세보기</a>
+                    <a href="a.pdf" class="pdf-link" target="_blank">📄 프로젝트 상세보기</a>
                 </div>
             </div>
         </section>
@@ -696,7 +696,7 @@
             <h2>Contact</h2>
             <div class="contact-card">
                 <ul class="contact-list">
-                    <li>Email: <a href="/cdn-cgi/l/email-protection#9feef4fbfef1ecf8eaedaddff1fee9faedb1fcf0f2"><span class="__cf_email__" data-cfemail="91e0faf5f0ffe2f6e4e3a3d1fff0e7f4e3bff2fefc">[email&#160;protected]</span></a></li>
+                    <li>Email: <a href="mailto:qkdansgur2@naver.com">qkdansgur2@naver.com</a></li>
                     <li>GitHub: <a href="https://github.com/moomininmoon" target="_blank">github.com/moomininmoon</a></li>
                 </ul>
             </div>
@@ -732,7 +732,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // PDF 열기
         function openPDF(filename, title) {
             const modal = document.getElementById('pdfModal');
@@ -823,4 +823,14 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
-                    entry.target.s
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
